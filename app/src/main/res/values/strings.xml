@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AutomotivePlatform</string>
+    <string name="chk_log">Show Password</string>
 </resources>
