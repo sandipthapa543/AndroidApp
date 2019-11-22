@@ -30,7 +30,7 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="First Name"
-            android:drawableLeft="@drawable/Username"
+            android:drawableLeft="@drawable/username"
             android:inputType="textPersonName"
 
 
@@ -40,7 +40,7 @@
             android:textSize="16sp" />
         <EditText
             android:id="@+id/last_Name"
-            android:drawableLeft="@drawable/lastName"
+            android:drawableLeft="@drawable/lastname"
 
             android:singleLine="true"
             android:layout_width="fill_parent"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/Email"
+            android:drawableLeft="@drawable/email"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Email"
@@ -143,7 +143,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp"
-            android:drawableLeft="@drawable/Location"/>
+            android:drawableLeft="@drawable/location"/>
 
         <Button
             android:id="@+id/SignUpBtn"
