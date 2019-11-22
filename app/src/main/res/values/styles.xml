@@ -7,4 +7,13 @@
         <item name="colorControlHighlight">@color/button</item>
     </style>
 
+    <style name="login.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="login.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="login.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
