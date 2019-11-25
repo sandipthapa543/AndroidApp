@@ -1,8 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="login" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="login" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+
 
         <item name="colorControlHighlight">@color/button</item>
     </style>
@@ -14,6 +15,8 @@
 
     <style name="login.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="login.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="login.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
 
 </resources>
