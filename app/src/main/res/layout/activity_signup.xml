@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/shape">
+    >
 
     <LinearLayout
         android:id="@+id/login_layout"
@@ -11,15 +11,6 @@
         android:layout_centerInParent="true"
         android:orientation="vertical" >
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="Sign Up"
-            android:textColor="@color/white"
-            android:textSize="45sp"
-            android:textStyle="bold" />
         <EditText
             android:id="@+id/firstName"
             android:singleLine="true"
@@ -39,7 +30,6 @@
         <EditText
             android:id="@+id/last_Name"
             android:drawableLeft="@drawable/lastname"
-
             android:singleLine="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -94,21 +84,7 @@
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/login_Repassword"
-            android:singleLine="true"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:drawablePadding="8dp"
-            android:gravity="center_vertical"
-            android:hint="Confirm Passowrd"
-            android:drawableLeft="@drawable/password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="16sp" />
+
         <EditText
             android:id="@+id/Phone"
             android:singleLine="true"
@@ -144,18 +120,22 @@
             android:drawableLeft="@drawable/location"/>
 
         <Button
-            android:id="@+id/SignUpBtn"
-            android:layout_width="150dp"
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:background="@color/button"
-            android:padding="3dp"
-            android:text="Sign Up"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:gravity="center"/>
+            android:layout_margin="15dp"
+            android:background="@drawable/roundedbutton"
+            android:text="SignUp"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundedbutton"
+            android:text="SignIn"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 </RelativeLayout>

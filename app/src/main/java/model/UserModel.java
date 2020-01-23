@@ -1,16 +1,15 @@
 package model;
 
 public class UserModel {
-    private String fname,lname,email,password,phone,address,DoB;
+    private String fname,lname,email,password,phone,address;
 
-    public UserModel(String fname, String lname, String email, String password, String phone, String address, String doB) {
+    public UserModel(String fname, String lname, String email, String password, String phone, String address) {
         this.fname = fname;
         this.lname = lname;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.address = address;
-        DoB = doB;
     }
 
     public String getFname() {
@@ -61,11 +60,4 @@ public class UserModel {
         this.address = address;
     }
 
-    public String getDoB() {
-        return DoB;
-    }
-
-    public void setDoB(String doB) {
-        DoB = doB;
-    }
 }
