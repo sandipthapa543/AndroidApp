@@ -23,7 +23,13 @@ public class DashboardFragment extends Fragment {
         dashboardViewModel =
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
         return root;
+
+            }
+
+
     }
-}
