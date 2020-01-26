@@ -11,7 +11,7 @@
         android:layout_centerInParent="true"
         android:orientation="vertical" >
 
-<<<<<<< HEAD
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -133,18 +133,16 @@
 
 
         <Button
-<<<<<<< HEAD
-            android:id="@+id/btnLogin"
-=======
+
             android:id="@+id/btnSignup"
->>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/roundedbutton"
             android:text="SignUp"
             android:textColor="#FFFFFF" />
-<<<<<<< HEAD
+
 =======
 
         <Button

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/login">
-<<<<<<< HEAD
+
 =======
         <activity android:name=".SplashActivity"></activity>
 >>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
