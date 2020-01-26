@@ -8,17 +8,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/login">
 
-=======
-        <activity android:name=".SplashActivity"></activity>
->>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
+
+        <activity android:name=".DashboardActivity"></activity>
+
         <activity android:name=".SignupActivity" />
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_dashboard" />
-        <activity android:name=".DashboardActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
