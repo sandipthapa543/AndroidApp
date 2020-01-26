@@ -10,12 +10,26 @@
     <include  layout="@layout/account_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+
+        >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/plogo"
+        android:layout_gravity="center">
+
+    </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
         >
 
 
@@ -37,10 +51,77 @@
             android:background="@drawable/roundedbutton"
             android:text="Create Account"
             android:textColor="#FFFFFF" />
+
+
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        >
 
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Connect with Other Ways"
+        android:textSize="20dp"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        ></TextView>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="106dp"
+        android:layout_height="33dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:background="@drawable/btngoogle"
+        android:drawableLeft="@drawable/google"
+        android:text="Google"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.035"></Button>
+
+    <Button
+        android:layout_width="113dp"
+        android:layout_height="33dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:background="@drawable/btnfb"
+        android:drawableLeft="@drawable/facebook"
+        android:text="Facebook"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.698"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.035">
+
+    </Button>
+        </GridLayout>
+
+
+
+</LinearLayout>
 
 
 </FrameLayout>
