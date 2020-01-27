@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiUrl {
 
-    public static final String base_url="http://10.0.2.2:8000/";
+    public static final String base_url="http://10.0.2.2:3000/";
     public static String token = "Bearer ";
 
 

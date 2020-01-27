@@ -12,7 +12,7 @@ public interface UserApi {
 
 
     @POST("users/SignUp")
-    Call<UserResponse> registerUser(@Body UserModel users);
+    Call<UserResponse> register(@Body UserModel users);
 
 
     @FormUrlEncoded

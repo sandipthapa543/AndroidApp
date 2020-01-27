@@ -1,31 +1,31 @@
 package model;
 
 public class UserModel {
-    private String fname,lname,email,password,phone,address;
+    private String first_Name,last_Name,email,password,phone,address;
 
-    public UserModel(String fname, String lname, String email, String password, String phone, String address) {
-        this.fname = fname;
-        this.lname = lname;
+    public UserModel(String first_Name, String last_Name, String email, String password, String phone, String address) {
+        this.first_Name = first_Name;
+        this.last_Name = last_Name;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.address = address;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFirst_Name() {
+        return first_Name;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirst_Name(String first_Name) {
+        this.first_Name = first_Name;
     }
 
-    public String getLname() {
-        return lname;
+    public String getLast_Name() {
+        return last_Name;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setLast_Name(String last_Name) {
+        this.last_Name = last_Name;
     }
 
     public String getEmail() {
@@ -59,5 +59,4 @@ public class UserModel {
     public void setAddress(String address) {
         this.address = address;
     }
-
 }

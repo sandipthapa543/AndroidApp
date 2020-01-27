@@ -40,7 +40,7 @@
             android:textColorHint="@color/white"
             android:textSize="16sp" />
         <EditText
-            android:id="@+id/last_Name"
+            android:id="@+id/lastName"
             android:drawableLeft="@drawable/lastname"
             android:singleLine="true"
             android:layout_width="fill_parent"
@@ -59,7 +59,7 @@
 
 
         <EditText
-            android:id="@+id/login_emailid"
+            android:id="@+id/emailid"
             android:singleLine="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:background="@color/white_greyish" />
 
         <EditText
-            android:id="@+id/login_password"
+            android:id="@+id/password"
             android:singleLine="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
