@@ -15,7 +15,7 @@ public interface UserApi {
     Call<UserResponse> register(@Body UserModel users);
 
 
-    @FormUrlEncoded
+   @FormUrlEncoded
     @POST("users/login")
     Call<UserResponse> checkUser(@Field("email") String email, @Field("password") String password);
 
