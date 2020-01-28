@@ -58,17 +58,20 @@ private void Register(){
 
     UserModel users = new UserModel(fname, lname, emails, passwords,phones,addresss );
 
-    UserApi usersAPI = ApiUrl.getInstance().create(UserApi.class);
-    Call<UserResponse> signUpCall = usersAPI.register(users);
 
+    ApiUrl apiUrl = new ApiUrl();
+    Call<UserResponse> signUpCall =apiUrl.Connect().register(users);
     signUpCall.enqueue(new Callback<UserResponse>() {
         @Override
         public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-            if (!response.isSuccessful()) {
-                Toast.makeText(SignupActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
+            if (response.isSuccessful()) {
+              UserResponse userResponse=response.body();
+                  Toast.makeText(SignupActivity.this, ""+userResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                return;
 
+            } else {
+                Toast.makeText(SignupActivity.this, "not Registered", Toast.LENGTH_SHORT).show();
             }
-            Toast.makeText(SignupActivity.this, "Registered", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -78,6 +81,10 @@ private void Register(){
             Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
         }
     });
+
+}
+
+private void Clear(){
 
 }
 
