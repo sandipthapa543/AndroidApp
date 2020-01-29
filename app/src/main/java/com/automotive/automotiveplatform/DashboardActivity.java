@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.automotive.automotiveplatform.ui.account.AccountFragment;
 import com.automotive.automotiveplatform.ui.dashboard.DashboardFragment;
@@ -19,6 +20,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import java.net.URL;
+
+import api.UserApi;
+import url.ApiUrl;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -48,8 +54,15 @@ public class DashboardActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         break;
                     case R.id.navigation_Acc:
-                        fragment=new AccountFragment();
-                        loadFragment(fragment);
+                        Toast.makeText(DashboardActivity.this, ApiUrl.token, Toast.LENGTH_SHORT).show();
+                        if(ApiUrl.token.equals("Bearer ")) {
+
+                            fragment = new AccountFragment();
+                            loadFragment(fragment);
+                        }else{
+                            fragment = new ProfileFragment();
+                            loadFragment(fragment);
+                        }
                         break;
                 }
                 return true;

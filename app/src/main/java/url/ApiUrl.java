@@ -9,7 +9,6 @@ public class ApiUrl {
     public static final String base_url="http://10.0.2.2:4000/";
     public static String token = "Bearer ";
 
-
     public UserApi Connect() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(base_url)
