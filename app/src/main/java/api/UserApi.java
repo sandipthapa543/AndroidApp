@@ -1,6 +1,5 @@
 package api;
 
-import model.UserDetailsModel;
 import model.UserModel;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -24,6 +23,7 @@ public interface UserApi {
 
    //for user profile get me router
    @GET("users/me")
-    Call<UserDetailsModel> getMe(@Header("Authorization") String token);
+    Call<UserModel> getMe(@Header("Authorization") String token);
+
 
 }

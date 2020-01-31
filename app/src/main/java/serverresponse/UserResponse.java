@@ -2,8 +2,9 @@ package serverresponse;
 
 
 public class UserResponse {
-    private String status;
     private String token;
+    private String status;
+
     private String message;
 
     public String getMessage() {
@@ -27,7 +28,7 @@ public class UserResponse {
         this.status = status;
     }
 
-    public String getToken() {
+    public  String getToken() {
         return token;
     }
 

@@ -1,17 +1,29 @@
 package api;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClass {
-    public static UserApi calls(){
-        String base_url = "http://10.0.2.2:4000/";
-        //  String base_url = "http://172.100.100.5:3000/";
+    private static Retrofit retrofit;
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(base_url)
-                .addConverterFactory(GsonConverterFactory.create())
+    private static final String BASE_URL = "http://10.0.2.2:3000/";
+
+    public static Retrofit getInstance() {
+
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.level(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(logging)
                 .build();
-        UserApi userAPI=retrofit.create(UserApi.class);
-        return userAPI;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build();
+
+        return retrofit;
     }
 }
