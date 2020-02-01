@@ -27,7 +27,10 @@
         android:id="@+id/navigation_Acc"
         android:name="com.automotive.automotiveplatform.ui.account.AccountFragment"
         android:label="@string/title_accounts"
-        tools:layout="@layout/fragment_account"/>
+        tools:layout="@layout/fragment_account"
+    />
+
+
 
 
 </navigation>

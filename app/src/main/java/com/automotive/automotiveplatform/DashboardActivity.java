@@ -6,20 +6,18 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.automotive.automotiveplatform.ui.account.AccountFragment;
 import com.automotive.automotiveplatform.ui.dashboard.DashboardFragment;
 import com.automotive.automotiveplatform.ui.home.HomeFragment;
 import com.automotive.automotiveplatform.ui.notifications.NotificationsFragment;
+import com.automotive.automotiveplatform.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import url.ApiUrl;
 
 public class DashboardActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
@@ -32,7 +30,7 @@ public class DashboardActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
         sharedPreferences = getSharedPreferences("tokens", MODE_PRIVATE);
-        checktoken = sharedPreferences.getString("token", null);
+      checktoken = sharedPreferences.getString("token", null);
         Toast.makeText(this, checktoken, Toast.LENGTH_SHORT).show();
 
         loadFragment(new HomeFragment());
@@ -55,7 +53,7 @@ public class DashboardActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         break;
                     case R.id.navigation_Acc:
-                        if (checktoken.equals("")) {
+                        if (checktoken==null) {
                             fragment = new AccountFragment();
                             loadFragment(fragment);
 
