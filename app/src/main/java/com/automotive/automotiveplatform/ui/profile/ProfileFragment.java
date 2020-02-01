@@ -62,10 +62,10 @@ return view;
             @Override
             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
                 UserModel userModel =response.body();
-                name.setText(userModel.getFirst_Name());
-                email.setText(userModel.getEmail());
-                phone.setText(userModel.getPhone());
-                address.setText(userModel.getAddress());
+                name.setText("Name :"+ userModel.getFirst_Name());
+                email.setText("Email :" + userModel.getEmail());
+                phone.setText("Phone :"+ userModel.getPhone());
+                address.setText("Address :"+ userModel.getAddress());
             }
 
             @Override
