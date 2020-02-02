@@ -18,13 +18,16 @@ import com.smarteist.autoimageslider.SliderView;
 
 public class HomeFragment extends Fragment {
 
-    SliderView sliderView;
+
     RecyclerView recyclerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+recyclerView=root.findViewById(R.id.RecyclerView);
+
 return root;
 
     }
