@@ -8,6 +8,8 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import serverresponse.UserResponse;
 
 public interface UserApi {
@@ -24,6 +26,15 @@ public interface UserApi {
    //for user profile get me router
    @GET("users/me")
     Call<UserModel> getMe(@Header("Authorization") String token);
+
+   //for user profile update put router
+    @FormUrlEncoded
+    @PUT("users/{_id}")
+    Call<UserModel> updateuser(@Field("_id") String _id, @Header("Authorization") String token,
+                               @Field("name") String name,
+                               @Field("phone") String phone,
+                               @Field("address")String address);
+
 
 
 }

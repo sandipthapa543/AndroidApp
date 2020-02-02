@@ -1,7 +1,15 @@
 package model;
 
 public class UserModel {
-    private String first_Name,last_Name,email,password,phone,address;
+    private String _id, first_Name,last_Name,email,password,phone,address;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 
     public UserModel(String first_Name, String last_Name, String email, String password, String phone, String address) {
         this.first_Name = first_Name;

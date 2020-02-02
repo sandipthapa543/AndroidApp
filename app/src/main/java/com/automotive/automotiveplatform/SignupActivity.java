@@ -20,6 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import serverresponse.UserResponse;
+import strictmode.StrictModeClass;
 import url.ApiUrl;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
@@ -60,17 +61,18 @@ private void Register(){
 
 
     ApiUrl apiUrl = new ApiUrl();
+    StrictModeClass.StrictMode();
     Call<UserResponse> signUpCall =apiUrl.Connect().register(users);
     signUpCall.enqueue(new Callback<UserResponse>() {
         @Override
         public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-            if (response.isSuccessful()) {
-              UserResponse userResponse=response.body();
+            if (!response.isSuccessful()) {
+                   UserResponse userResponse=response.body();
                   Toast.makeText(SignupActivity.this, ""+userResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 return;
 
             } else {
-                Toast.makeText(SignupActivity.this, "not Registered", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this, "Registered", Toast.LENGTH_SHORT).show();
             }
         }
 
