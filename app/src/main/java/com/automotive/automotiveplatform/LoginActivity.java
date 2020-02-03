@@ -59,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             SharedPreferences preferences = getSharedPreferences("tokens", MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("token", LoginBLL.token);
+            editor.putString("id", LoginBLL.id);
             editor.commit();
         } else {
             Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();

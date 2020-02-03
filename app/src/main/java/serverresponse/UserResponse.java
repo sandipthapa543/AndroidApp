@@ -3,6 +3,7 @@ package serverresponse;
 
 public class UserResponse {
     private String token;
+    private String id;
     private String status;
 
     private String message;
@@ -30,6 +31,10 @@ public class UserResponse {
 
     public  String getToken() {
         return token;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setToken(String token) {

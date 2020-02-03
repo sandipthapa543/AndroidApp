@@ -1,6 +1,7 @@
 package Bll;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.io.IOException;
 
@@ -18,6 +19,7 @@ public class LoginBLL {
 
     boolean isSuccess = false;
     public static String token;
+    public static String id;
     UserApi usersAPI;
 
     public LoginBLL() {
@@ -33,9 +35,12 @@ public class LoginBLL {
 
         try {
             Response<UserResponse> loginResponse = usersCall.execute();
+            Log.d("response_user", ""+loginResponse.body());
             if (loginResponse.isSuccessful() &&
                     loginResponse.body().getStatus().equals("Login success!")) {
                 UserResponse signUpResponse = loginResponse.body();
+                id = loginResponse.body().getId();
+                Log.d("user_id", ""+id);
                 token = signUpResponse.getToken();
                 // Url.Cookie = imageResponseResponse.headers().get("Set-Cookie");
                 isSuccess = true;

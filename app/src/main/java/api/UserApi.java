@@ -29,12 +29,9 @@ public interface UserApi {
 
    //for user profile update put router
     @FormUrlEncoded
-    @PUT("users/{_id}")
-    Call<UserModel> updateuser(@Field("_id") String _id, @Header("Authorization") String token,
-                               @Field("name") String name,
+    @PUT("users/edit/{id}")
+    Call<UserModel> updateuser(@Path("id") String _id, @Header("Authorization") String token,
+                               @Field("first_Name") String first_Name, @Field("last_Name") String last_Name,
                                @Field("phone") String phone,
                                @Field("address")String address);
-
-
-
 }
