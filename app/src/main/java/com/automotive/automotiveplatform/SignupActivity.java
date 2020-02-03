@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import api.ApiClass;
 import api.Check;
 import api.UserApi;
@@ -63,33 +65,19 @@ private void Register(){
     ApiUrl apiUrl = new ApiUrl();
     StrictModeClass.StrictMode();
     Call<UserResponse> signUpCall =apiUrl.Connect().register(users);
-    signUpCall.enqueue(new Callback<UserResponse>() {
-        @Override
-        public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-            if (!response.isSuccessful()) {
-                   UserResponse userResponse=response.body();
-                  Toast.makeText(SignupActivity.this, ""+userResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                return;
-
-            } else {
-                Toast.makeText(SignupActivity.this, "Registered", Toast.LENGTH_SHORT).show();
-            }
+    try {
+        Response<UserResponse> response = signUpCall.execute();
+        if(!response.isSuccessful()){
+            UserResponse userResponse=response.body();
+            Toast.makeText(SignupActivity.this, ""+userResponse.getMessage(), Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(SignupActivity.this,LoginActivity.class);
+            Toast.makeText(SignupActivity.this, "Registered", Toast.LENGTH_SHORT).show();
         }
-
-
-
-        @Override
-        public void onFailure(Call<UserResponse> call, Throwable t) {
-            Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-        }
-    });
-
+    } catch (Exception e){
+        e.printStackTrace();
+    }
 }
-
-private void Clear(){
-
-}
-
 }
 
 

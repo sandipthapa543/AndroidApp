@@ -43,8 +43,8 @@ private GoogleMap mMap;
         mMap = googleMap;
 
         List<MapModel> latLngs = new ArrayList<>();
-        latLngs.add(new MapModel(27.7052354, 85.3294158, "Softwarica College"));
-        latLngs.add(new MapModel(27.70482, 85.3293997, "Goapl dai ko chatamari"));
+        latLngs.add(new MapModel(27.7052354, 85.3294158, "Marruti Parts Shop"));
+        latLngs.add(new MapModel(27.70482, 86.3293990, "Hond Parts Shop"));
 
         CameraUpdate center, zoom;
         for (int i = 0; i < latLngs.size(); i++) {

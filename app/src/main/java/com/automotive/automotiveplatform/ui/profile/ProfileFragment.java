@@ -65,6 +65,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         UserApi usersAPI = ApiClass.getInstance().create(UserApi.class);
         SharedPreferences preferences = getActivity().getSharedPreferences("tokens", MODE_PRIVATE);
         final String token = preferences.getString("token", null);
+
         Call<UserModel> userModelCall = usersAPI.getMe(token);
         userModelCall.enqueue(new Callback<UserModel>() {
             @Override
