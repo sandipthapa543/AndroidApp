@@ -72,6 +72,7 @@ private void Register(){
             Toast.makeText(SignupActivity.this, ""+userResponse.getMessage(), Toast.LENGTH_SHORT).show();
         } else {
             Intent intent = new Intent(SignupActivity.this,LoginActivity.class);
+            startActivity(intent);
             Toast.makeText(SignupActivity.this, "Registered", Toast.LENGTH_SHORT).show();
         }
     } catch (Exception e){

@@ -18,12 +18,15 @@ import com.automotive.automotiveplatform.DashboardActivity;
 import com.automotive.automotiveplatform.R;
 import com.automotive.automotiveplatform.ui.profileupdate.ProfileUpdateFragment;
 
+import java.io.IOException;
+
 import api.ApiClass;
 import api.UserApi;
 import model.UserModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import strictmode.StrictModeClass;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -67,22 +70,20 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         final String token = preferences.getString("token", null);
 
         Call<UserModel> userModelCall = usersAPI.getMe(token);
-        userModelCall.enqueue(new Callback<UserModel>() {
-            @Override
-            public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+        StrictModeClass.StrictMode();
+        try {
+            Response<UserModel> response = userModelCall.execute();
+            if (response.isSuccessful()) {
                 UserModel userModel = response.body();
                 id = userModel.get_id();
-                name.setText("Name :" + userModel.getFirst_Name()+" "+userModel.getLast_Name());
+                name.setText("Name :" + userModel.getFirst_Name() + " " + userModel.getLast_Name());
                 email.setText("Email :" + userModel.getEmail());
                 phone.setText("Phone :" + userModel.getPhone());
                 address.setText("Address :" + userModel.getAddress());
             }
-
-            @Override
-            public void onFailure(Call<UserModel> call, Throwable t) {
-                Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

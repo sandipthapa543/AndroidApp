@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.automotive.automotiveplatform.R;
 
+import java.io.IOException;
+
 import api.ApiClass;
 import api.UserApi;
 import model.UserModel;
@@ -69,28 +71,18 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
         String phones = phone.getText().toString();
         String addresses = address.getText().toString();
         Call<UserModel> userCall = usersAPI.updateuser(id, token, fname, lname ,phones,addresses);
-        userCall.enqueue(new Callback<UserModel>() {
-
-            @Override
-            public void onResponse(Call<UserModel> call, Response<UserModel> response) {
-
-                if (!response.isSuccessful()) {
-                    Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                else {
-                    reload();
-                    getActivity().getFragmentManager().popBackStack();
-                    Toast.makeText(getActivity(), "Successful", Toast.LENGTH_SHORT).show();
-                }
+        try {
+            Response<UserModel> response = userCall.execute();
+            if (!response.isSuccessful()) {
+                Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
+            } else {
+                reload();
+                getActivity().getFragmentManager().popBackStack();
+                Toast.makeText(getActivity(), "Successful", Toast.LENGTH_SHORT).show();
             }
-
-            @Override
-            public void onFailure(Call<UserModel> call, Throwable t) {
-                Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void reload(){
