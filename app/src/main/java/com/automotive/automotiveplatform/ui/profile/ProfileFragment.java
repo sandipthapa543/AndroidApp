@@ -76,10 +76,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             if (response.isSuccessful()) {
                 UserModel userModel = response.body();
                 id = userModel.get_id();
-                name.setText("Name :" + userModel.getFirst_Name() + " " + userModel.getLast_Name());
-                email.setText("Email :" + userModel.getEmail());
-                phone.setText("Phone :" + userModel.getPhone());
-                address.setText("Address :" + userModel.getAddress());
+                name.setText( userModel.getFirst_Name() + " " + userModel.getLast_Name());
+                email.setText( userModel.getEmail());
+                phone.setText( userModel.getPhone());
+                address.setText( userModel.getAddress());
             }
         } catch (IOException e) {
             e.printStackTrace();

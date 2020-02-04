@@ -1,7 +1,10 @@
 package com.automotive.automotiveplatform;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 
 import Bll.LoginBLL;
 import model.UserModel;
+import services.Notify;
 import strictmode.StrictModeClass;
 import url.ApiUrl;
 
@@ -20,6 +24,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText emails, passwords;
     Button btnlogin;
     public static String token = "";
+    NotificationManagerCompat notificationManagerCompat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         emails.setText("");
         passwords.setText("");
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+        Notify channel = new Notify(this);
+        channel.createChannel();
 
 
     }
@@ -53,6 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(email, password)) {
             Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+            displayNotification();
             Toast.makeText(this, LoginBLL.token, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             finish();
@@ -67,5 +77,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-
+    private void displayNotification(){
+        Notification notification = new NotificationCompat.Builder(this, Notify.CHANNEL_ONE)
+                .setSmallIcon(R.drawable.plogo)
+                .setContentTitle("Login Successful")
+                .setContentText("You are logged in")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManagerCompat.notify(1, notification);
+    }
 }
