@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiUrl {
 
     public static final String base_url="http://10.0.2.2:9000/";
-    public static String token = "";
+
 
     public UserApi Connect() {
         Retrofit retrofit = new Retrofit.Builder()

@@ -21,6 +21,7 @@
             android:background="@drawable/plogo2"/>
 
         <TextView
+            android:id="@+id/toolbarHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
