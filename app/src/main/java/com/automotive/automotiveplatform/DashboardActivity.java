@@ -53,7 +53,7 @@ public class DashboardActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         break;
                     case R.id.navigation_Acc:
-                        if (checktoken.equals("")) {
+                        if (checktoken==null) {
                             fragment = new AccountFragment();
                             loadFragment(fragment);
                         } else {

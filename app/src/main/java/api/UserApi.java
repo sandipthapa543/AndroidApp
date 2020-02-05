@@ -1,5 +1,9 @@
 package api;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Brand;
 import model.UserModel;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -34,4 +38,6 @@ public interface UserApi {
                                @Field("first_Name") String first_Name, @Field("last_Name") String last_Name,
                                @Field("phone") String phone,
                                @Field("address")String address);
+
+
 }
