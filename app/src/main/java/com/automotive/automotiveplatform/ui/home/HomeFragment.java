@@ -11,13 +11,25 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.automotive.automotiveplatform.R;
 import com.smarteist.autoimageslider.SliderView;
 
-public class HomeFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
 
+import adapter.HomeViewAdapter;
+import api.ApiClass;
+import api.ProductAPI;
+import api.UserApi;
+import model.Brand;
+import retrofit2.Call;
+import retrofit2.Response;
+import strictmode.StrictModeClass;
+
+public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView;
 
@@ -25,10 +37,31 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView=root.findViewById(R.id.RecyclerView);
 
-recyclerView=root.findViewById(R.id.RecyclerView);
+        fillUpRecyclerView();
 
-return root;
+        return root;
 
+    }
+
+    private void fillUpRecyclerView(){
+        ProductAPI api = ApiClass.getInstance().create(ProductAPI.class);
+        Call<List<Brand>> call = api.getAllBrands();
+        StrictModeClass.StrictMode();
+        try{
+            Response<List<Brand>> response = call.execute();
+
+            if(response.isSuccessful()){
+                List<Brand> brandList = response.body();
+                HomeViewAdapter adapter = new HomeViewAdapter(getContext(), brandList);
+                RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
+
+                recyclerView.setAdapter(adapter);
+                recyclerView.setLayoutManager(layoutManager);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
