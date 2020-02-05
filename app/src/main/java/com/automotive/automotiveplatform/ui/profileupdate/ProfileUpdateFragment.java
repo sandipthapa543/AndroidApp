@@ -77,7 +77,6 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
                 Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
             } else {
                 reload();
-                getActivity().getFragmentManager().popBackStack();
                 Toast.makeText(getActivity(), "Successful", Toast.LENGTH_SHORT).show();
             }
         } catch (IOException e) {

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg"
     >
 
 
@@ -9,24 +10,18 @@
         android:id="@+id/login_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:orientation="vertical" >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/plogo"
-            android:layout_gravity="center"
-            />
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:padding="10dp"
+            android:gravity="center"
             android:text="Log In"
+            android:drawableLeft="@drawable/plogo2"
             android:textColor="@color/white"
-            android:textSize="45sp"
+            android:textSize="24dp"
             android:textStyle="bold" />
 
         <EditText
@@ -36,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/username"
+            android:drawableLeft="@drawable/email"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Email"
@@ -81,7 +76,7 @@
                 android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/chk_log"
+                android:text="Save password"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />

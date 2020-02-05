@@ -13,12 +13,12 @@
         android:id="@+id/accbar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@drawable/shape">
+        android:background="#add8e6">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape"/>
+            android:background="@drawable/plogo2"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
             android:textColor="#000"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="Hello, Welcome to Automotive solution!"/>
+            android:text="Welcome to Automobile Solution"/>
 
 
 

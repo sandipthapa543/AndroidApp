@@ -15,9 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile"
-            android:textSize="25dp"
-            android:textColor="#000"
-            android:textStyle="bold"/>
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#000"/>
         <LinearLayout
             android:id="@+id/topLinear"
             android:layout_width="match_parent"
@@ -54,9 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/buttonstyle"
         android:text="Edit Profile"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_marginBottom="5dp"/>
 
     <androidx.cardview.widget.CardView
@@ -160,7 +159,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/lastname"/>
+                android:src="@drawable/last"/>
             <TextView
                 android:id="@+id/Email"
                 android:textStyle="bold"
@@ -182,7 +181,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/phones"/>
+                android:src="@drawable/phone"/>
             <TextView
                 android:id="@+id/Phone"
                 android:textStyle="bold"
@@ -203,7 +202,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/location"/>
+                android:src="@drawable/address"/>
             <TextView
                 android:textStyle="bold"
                 android:id="@+id/Address"

@@ -19,7 +19,7 @@
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:hint="First Name"
-        android:drawableLeft="@drawable/username"
+        android:drawableLeft="@drawable/last"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -36,7 +36,7 @@
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:hint="Last Name"
-        android:drawableLeft="@drawable/username"
+        android:drawableLeft="@drawable/name"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -58,7 +58,7 @@
         android:padding="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:drawableLeft="@drawable/phones"
+        android:drawableLeft="@drawable/phone"
 
         android:textSize="16sp" />
     <EditText
@@ -76,7 +76,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="16sp"
-        android:drawableLeft="@drawable/location"/>
+        android:drawableLeft="@drawable/address"/>
 
 
     <Button
@@ -86,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:background="@drawable/roundedbutton"
+        android:background="@drawable/buttonstyle"
         android:text="Save Changes"
         android:textColor="#FFFFFF" />
 

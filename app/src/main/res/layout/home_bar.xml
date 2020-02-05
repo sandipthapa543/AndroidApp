@@ -10,12 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#BB3752"
+        android:background="#add8e6"
         android:clickable="true">
 
 
@@ -27,6 +26,10 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/plogo2"/>
 
     </androidx.appcompat.widget.Toolbar>
 
