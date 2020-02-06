@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.automotive.automotiveplatform.DashboardActivity;
 import com.automotive.automotiveplatform.R;
@@ -38,6 +39,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     String id;
     private TextView name, email, phone, address;
     private Button btnEdit, btnLogout;
+   private Toolbar toolbarHeading;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -59,6 +61,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         btnLogout = view.findViewById(R.id.btnLogout);
         btnEdit.setOnClickListener(this);
         btnLogout.setOnClickListener(this);
+
         loadProfile();
 
         return view;
