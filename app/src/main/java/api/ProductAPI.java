@@ -17,5 +17,4 @@ public interface ProductAPI {
 
     @GET("product/brand/{id}")
     Call<List<ProductModel>> getAllProducts(@Path("id") String id);
-
 }

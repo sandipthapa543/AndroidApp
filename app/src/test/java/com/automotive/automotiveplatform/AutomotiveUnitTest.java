@@ -4,8 +4,12 @@ import com.google.android.gms.common.api.Api;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import api.ApiClass;
+import api.ProductAPI;
 import api.UserApi;
+import model.Brand;
 import model.UserModel;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -16,6 +20,7 @@ import static junit.framework.TestCase.assertTrue;
 
 public class AutomotiveUnitTest {
     UserApi api;
+    ProductAPI productAPI;
 
        //Login testing
 
@@ -75,6 +80,20 @@ public class AutomotiveUnitTest {
                 e.printStackTrace();
             }
        }
+
+       @Test
+    public void getBrand(){
+            productAPI = ApiClass.getInstance().create(ProductAPI.class);
+           Call<List<Brand>> call = productAPI.getAllBrands();
+           try{
+               Response<List<Brand>> callresponse =call.execute();
+               assertTrue(callresponse.isSuccessful());
+           }
+           catch (Exception e){
+               e.printStackTrace();
+           }
+       }
+
 
     }
 
