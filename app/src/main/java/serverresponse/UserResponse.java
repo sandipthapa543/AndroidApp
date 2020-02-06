@@ -3,7 +3,7 @@ package serverresponse;
 
 public class UserResponse {
     private String token;
-    private String id;
+    private String _id;
     private String status;
 
     private String message;
@@ -16,7 +16,8 @@ public class UserResponse {
         this.message = message;
     }
 
-    public UserResponse(String status, String token) {
+    public UserResponse(String _id, String status, String token) {
+        this._id = _id;
         this.status = status;
         this.token = token;
     }
@@ -34,7 +35,7 @@ public class UserResponse {
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public void setToken(String token) {
