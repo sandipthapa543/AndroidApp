@@ -30,7 +30,7 @@ public class DashboardActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
         sharedPreferences = getSharedPreferences("tokens", MODE_PRIVATE);
-        checktoken = sharedPreferences.getString("token", null);
+        checktoken = sharedPreferences.getString("token", "");
         Toast.makeText(this, checktoken, Toast.LENGTH_SHORT).show();
 
         loadFragment(new HomeFragment());
@@ -49,11 +49,18 @@ public class DashboardActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         break;
                     case R.id.navigation_notifications:
+                        if(checktoken==""){
+                                fragment =new AccountFragment();
+                                loadFragment(fragment);}
+
+                    else{
                         fragment = new NotificationsFragment();
-                        loadFragment(fragment);
+                                loadFragment(fragment);}
+
                         break;
+
                     case R.id.navigation_Acc:
-                        if (checktoken==null) {
+                        if (checktoken=="") {
                             fragment = new AccountFragment();
                             loadFragment(fragment);
                         } else {

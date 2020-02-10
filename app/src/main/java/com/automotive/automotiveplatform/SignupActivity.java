@@ -59,7 +59,7 @@ private void Register(){
     String addresss = address.getText().toString();
 
 
-    UserModel users = new UserModel(fname, lname, emails, passwords,phones,addresss );
+    UserModel users = new UserModel(null, "customer", fname, lname, emails, passwords,phones,addresss );
 
 
     ApiUrl apiUrl = new ApiUrl();

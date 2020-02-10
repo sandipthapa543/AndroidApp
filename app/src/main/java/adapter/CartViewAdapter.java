@@ -1,6 +1,7 @@
 package adapter;
 
 import android.content.Context;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.automotive.automotiveplatform.R;
 import com.automotive.automotiveplatform.ui.profileupdate.ProfileUpdateFragment;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import api.ApiClass;
@@ -35,7 +37,7 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.CartHo
     Context context;
     List<CartModel> cartModelList;
     String productName, productPrice, productImage;
-    String userName, token;
+    String  token;
     Fragment fragment;
 
     public CartViewAdapter(Context context, List<CartModel> cartModelList, String token, Fragment fragment) {
@@ -56,8 +58,7 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.CartHo
     @Override
     public void onBindViewHolder(@NonNull CartHolder holder, int position) {
         final CartModel cart = cartModelList.get(position);
-
-        getProductById(cart.getProduct());
+        cart.get_id();
 
         String temp_status = "Checkout";
         if(cart.getStatus()==temp_status){
@@ -87,7 +88,8 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.CartHo
 
     @Override
     public int getItemCount() {
-        return cartModelList.size();
+            return cartModelList.size();
+
     }
 
     public class CartHolder extends RecyclerView.ViewHolder{
@@ -101,8 +103,8 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.CartHo
 
             cartHolder = itemView.findViewById(R.id.cartHolder);
             imgProduct = itemView.findViewById(R.id.imgProductRV);
-            txtProductName = (TextView) itemView.findViewById(R.id.txtProductName);
-            txtProductPrice = (TextView) itemView.findViewById(R.id.txtProductPrice);
+            txtProductName = itemView.findViewById(R.id.txtProductName);
+            txtProductPrice = itemView.findViewById(R.id.txtProductPrice);
             btnCheckout = itemView.findViewById(R.id.btnCheckOut);
             btnDelete = itemView.findViewById(R.id.btnDelete);
 
