@@ -4,6 +4,7 @@ package com.automotive.automotiveplatform.ui.profileupdate;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -24,6 +25,7 @@ import model.UserModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import strictmode.StrictModeClass;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -59,6 +61,8 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View v) {
         updateUser();
+
+
     }
 
     private void updateUser() {
@@ -71,6 +75,7 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
         String phones = phone.getText().toString();
         String addresses = address.getText().toString();
         Call<UserModel> userCall = usersAPI.updateuser(id, token, fname, lname ,phones,addresses);
+        StrictModeClass.StrictMode();
         try {
             Response<UserModel> response = userCall.execute();
             if (!response.isSuccessful()) {
