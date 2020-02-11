@@ -43,7 +43,6 @@ public class HomeViewAdapter extends RecyclerView.Adapter<HomeViewAdapter.HomeVi
         Brand brand = brandList.get(position);
 
         holder.txtBrand.setText(brand.getBrandName());
-        Toast.makeText(context, ""+brand.getBrandImage(), Toast.LENGTH_SHORT).show();
         Picasso.get().load("http://10.0.2.2:9000/static/"+brand.getBrandImage().trim()).into(holder.imgBrand);
 
         holder.cvItem.setOnClickListener(new View.OnClickListener() {

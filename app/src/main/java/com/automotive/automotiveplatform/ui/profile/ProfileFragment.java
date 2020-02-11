@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.automotive.automotiveplatform.ui.profileupdate.ProfileUpdateFragment;
 
 import java.io.IOException;
 
+import Bll.LoginBLL;
 import api.ApiClass;
 import api.UserApi;
 import model.User;
@@ -38,6 +40,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private TextView name, email, phone, address;
     private Button btnEdit, btnLogout;
    private Toolbar toolbarHeading;
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -50,6 +54,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        sp = getContext().getSharedPreferences("tokens", MODE_PRIVATE);
+        editor = sp.edit();
+        editor.apply();
 
         name = view.findViewById(R.id.Name);
         email = view.findViewById(R.id.Email);
@@ -77,6 +85,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             if (response.isSuccessful()) {
                 User userModel = response.body();
                 id = userModel.get_id();
+                Log.d("id_user", id);
                 name.setText( userModel.getFirst_Name() + " " + userModel.getLast_Name());
                 email.setText( userModel.getEmail());
                 phone.setText( userModel.getPhone());
@@ -97,9 +106,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btnLogout:
-                SharedPreferences sp = getContext().getSharedPreferences("tokens", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
                 editor.putString("token", "");
+                editor.putString("id", "");
                 editor.apply();
                 Intent i = new Intent(getActivity(), DashboardActivity.class);
                 startActivity(i);
