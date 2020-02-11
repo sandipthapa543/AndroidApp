@@ -142,15 +142,6 @@
             android:textColor="#FFFFFF" />
 
 
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/roundedbutton"
-            android:text="SignIn"
-            android:textColor="#FFFFFF" />
->>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
 
     </LinearLayout>
 </RelativeLayout>

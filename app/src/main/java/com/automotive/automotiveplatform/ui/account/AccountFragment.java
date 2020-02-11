@@ -1,8 +1,6 @@
 package com.automotive.automotiveplatform.ui.account;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,8 +13,6 @@ import android.widget.Button;
 import com.automotive.automotiveplatform.LoginActivity;
 import com.automotive.automotiveplatform.R;
 import com.automotive.automotiveplatform.SignupActivity;
-import com.automotive.automotiveplatform.ui.dashboard.DashboardFragment;
-import com.automotive.automotiveplatform.ui.home.HomeFragment;
 
 
 public class AccountFragment extends Fragment implements View.OnClickListener {

@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.automotive.automotiveplatform.DashboardActivity;
@@ -23,9 +22,8 @@ import java.io.IOException;
 
 import api.ApiClass;
 import api.UserApi;
-import model.UserModel;
+import model.User;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import strictmode.StrictModeClass;
 
@@ -72,12 +70,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         SharedPreferences preferences = getActivity().getSharedPreferences("tokens", MODE_PRIVATE);
         final String token = preferences.getString("token", null);
 
-        Call<UserModel> userModelCall = usersAPI.getMe(token);
+        Call<User> userModelCall = usersAPI.getMe(token);
         StrictModeClass.StrictMode();
         try {
-            Response<UserModel> response = userModelCall.execute();
+            Response<User> response = userModelCall.execute();
             if (response.isSuccessful()) {
-                UserModel userModel = response.body();
+                User userModel = response.body();
                 id = userModel.get_id();
                 name.setText( userModel.getFirst_Name() + " " + userModel.getLast_Name());
                 email.setText( userModel.getEmail());

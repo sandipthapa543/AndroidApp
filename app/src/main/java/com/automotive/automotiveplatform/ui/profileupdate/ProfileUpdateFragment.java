@@ -20,10 +20,10 @@ import java.io.IOException;
 
 import api.ApiClass;
 import api.UserApi;
-import model.UserModel;
+import model.User;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
+import strictmode.StrictModeClass;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -59,6 +59,8 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View v) {
         updateUser();
+
+
     }
 
     private void updateUser() {
@@ -70,9 +72,10 @@ public class ProfileUpdateFragment extends Fragment implements View.OnClickListe
         String lname = lastname.getText().toString();
         String phones = phone.getText().toString();
         String addresses = address.getText().toString();
-        Call<UserModel> userCall = usersAPI.updateuser(id, token, fname, lname ,phones,addresses);
+        Call<User> userCall = usersAPI.updateuser(id, token, fname, lname ,phones,addresses);
+        StrictModeClass.StrictMode();
         try {
-            Response<UserModel> response = userCall.execute();
+            Response<User> response = userCall.execute();
             if (!response.isSuccessful()) {
                 Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
             } else {

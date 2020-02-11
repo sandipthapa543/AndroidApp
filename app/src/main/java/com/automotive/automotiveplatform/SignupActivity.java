@@ -4,22 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-
-import api.ApiClass;
-import api.Check;
-import api.UserApi;
-import model.UserModel;
+import model.User;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import serverresponse.UserResponse;
 import strictmode.StrictModeClass;
@@ -59,7 +50,7 @@ private void Register(){
     String addresss = address.getText().toString();
 
 
-    UserModel users = new UserModel(fname, lname, emails, passwords,phones,addresss );
+    User users = new User(null, "customer", fname, lname, emails, passwords,phones,addresss );
 
 
     ApiUrl apiUrl = new ApiUrl();

@@ -30,7 +30,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/bentley"/>
+                android:src="@drawable/account"/>
             <TextView
                 android:id="@+id/Name"
                 android:layout_marginTop="10dp"
@@ -53,11 +53,12 @@
     android:layout_marginTop="10dp">
     <Button
         android:id="@+id/btnEdit"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Edit Profile"
-        android:textColor="#000"
+        android:background="#7884C9"
+        android:textColor="#fff"
         android:layout_marginBottom="5dp"/>
 
     <androidx.cardview.widget.CardView
@@ -230,7 +231,7 @@
         android:id="@+id/btnLogout"
         android:textColor="#fff"
         android:background="@drawable/buttonstyle"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

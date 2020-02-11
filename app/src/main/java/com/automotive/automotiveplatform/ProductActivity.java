@@ -14,14 +14,14 @@ import java.util.List;
 import adapter.ProductViewAdapter;
 import api.ApiClass;
 import api.ProductAPI;
-import model.ProductModel;
+import model.Product;
 import retrofit2.Call;
 import retrofit2.Response;
 import strictmode.StrictModeClass;
 
 public class ProductActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    List<ProductModel> productList;
+    List<Product> productList;
     TextView toolbarHeading;
 
     @SuppressLint("SetTextI18n")
@@ -45,10 +45,10 @@ public class ProductActivity extends AppCompatActivity {
 
     private void getProductList(){
         ProductAPI api = ApiClass.getInstance().create(ProductAPI.class);
-        Call<List<ProductModel>> call = api.getAllProducts("xyz");
+        Call<List<Product>> call = api.getAllProducts("xyz");
         StrictModeClass.StrictMode();
         try{
-            Response<List<ProductModel>> response = call.execute();
+            Response<List<Product>> response = call.execute();
             Log.d("rs_prodct", ""+response.body());
             if(response.isSuccessful()){
                 productList = response.body();

@@ -1,10 +1,6 @@
 package api;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import model.Brand;
-import model.UserModel;
+import model.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -18,9 +14,9 @@ import serverresponse.UserResponse;
 
 public interface UserApi {
 
-    //User signup routing for api link
+    //User sign up routing for api link
     @POST("users/SignUp")
-    Call<UserResponse> register(@Body UserModel users);
+    Call<UserResponse> register(@Body User users);
 
    // User login route with token check
    @FormUrlEncoded
@@ -29,15 +25,15 @@ public interface UserApi {
 
    //for user profile get me router
    @GET("users/me")
-    Call<UserModel> getMe(@Header("Authorization") String token);
+    Call<User> getMe(@Header("Authorization") String token);
 
    //for user profile update put router
     @FormUrlEncoded
     @PUT("users/edit/{id}")
-    Call<UserModel> updateuser(@Path("id") String _id, @Header("Authorization") String token,
-                               @Field("first_Name") String first_Name, @Field("last_Name") String last_Name,
-                               @Field("phone") String phone,
-                               @Field("address")String address);
+    Call<User> updateuser(@Path("id") String _id, @Header("Authorization") String token,
+                          @Field("first_Name") String first_Name, @Field("last_Name") String last_Name,
+                          @Field("phone") String phone,
+                          @Field("address")String address);
 
 
 }

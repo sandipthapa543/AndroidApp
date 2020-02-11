@@ -1,4 +1,4 @@
-package com.automotive.automotiveplatform.ui.dashboard;
+package com.automotive.automotiveplatform.ui.map;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -10,7 +10,7 @@ public class DashboardViewModel extends ViewModel {
 
     public DashboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is map fragment");
     }
 
     public LiveData<String> getText() {

@@ -1,4 +1,4 @@
-package com.automotive.automotiveplatform.ui.notifications;
+package com.automotive.automotiveplatform.ui.cart;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,8 +20,8 @@ import adapter.CartViewAdapter;
 import api.ApiClass;
 import api.ProductAPI;
 import api.UserApi;
-import model.CartModel;
-import model.UserModel;
+import model.Cart;
+import model.User;
 import retrofit2.Call;
 import retrofit2.Response;
 import strictmode.StrictModeClass;
@@ -31,7 +31,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class NotificationsFragment extends Fragment {
     RecyclerView rvCart;
     String token, id;
-    List<CartModel> itemsList;
+    List<Cart> itemsList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,8 +40,9 @@ public class NotificationsFragment extends Fragment {
         rvCart = root.findViewById(R.id.rvCart);
         SharedPreferences preferences = getContext().getSharedPreferences("tokens", MODE_PRIVATE);
         token = preferences.getString("token", "");
-        getAllItems();
+
         getUserID();
+        getAllItems();
 
         CartViewAdapter adapter = new CartViewAdapter(getContext(), itemsList, token, NotificationsFragment.this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -54,13 +55,12 @@ public class NotificationsFragment extends Fragment {
     private void getUserID() {
         UserApi usersAPI = ApiClass.getInstance().create(UserApi.class);
 
-
-        Call<UserModel> userModelCall = usersAPI.getMe(token);
+        Call<User> userModelCall = usersAPI.getMe(token);
         StrictModeClass.StrictMode();
         try {
-            Response<UserModel> response = userModelCall.execute();
+            Response<User> response = userModelCall.execute();
             if (response.isSuccessful()) {
-                UserModel userModel = response.body();
+                User userModel = response.body();
                 id = userModel.get_id();
             }
         } catch (IOException e) {
@@ -70,10 +70,10 @@ public class NotificationsFragment extends Fragment {
 
     private void getAllItems(){
         ProductAPI api = ApiClass.getInstance().create(ProductAPI.class);
-        Call<List<CartModel>> call = api.getAllItemsInCart(token);
+        Call<List<Cart>> call = api.getAllItemsInCart(token, id);
         StrictModeClass.StrictMode();
         try{
-            Response<List<CartModel>> response = call.execute();
+            Response<List<Cart>> response = call.execute();
             if(response.isSuccessful()){
                 itemsList = response.body();
             }

@@ -1,11 +1,11 @@
 package model;
 
-public class MapModel {
+public class Map {
     private double lat;
     private double lon;
     private String marker;
 
-    public MapModel(double lat, double lon, String marker) {
+    public Map(double lat, double lon, String marker) {
         this.lat = lat;
         this.lon = lon;
         this.marker = marker;

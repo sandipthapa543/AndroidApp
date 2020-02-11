@@ -1,4 +1,4 @@
-package com.automotive.automotiveplatform.ui.dashboard;
+package com.automotive.automotiveplatform.ui.map;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.MapModel;
+import model.Map;
 
 public class DashboardFragment extends Fragment implements OnMapReadyCallback {
 private GoogleMap mMap;
@@ -42,8 +42,8 @@ private GoogleMap mMap;
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        List<MapModel> latLngs = new ArrayList<>();
-        latLngs.add(new MapModel(27.7052354, 85.3294158, "MaxAuto Works Shop"));
+        List<Map> latLngs = new ArrayList<>();
+        latLngs.add(new Map(27.7052354, 85.3294158, "MaxAuto Works Shop"));
 
 
         CameraUpdate center, zoom;

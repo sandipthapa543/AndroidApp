@@ -1,9 +1,9 @@
 package model;
 
-public class CartModel {
-    private String _id, user, product, status;
-
-    public CartModel(String _id, String user, String product, String status) {
+public class Cart {
+    private String _id, user, status;
+    public Product product;
+    public Cart(String _id, String user, Product product, String status) {
         this._id = _id;
         this.user = user;
         this.product = product;
@@ -18,10 +18,9 @@ public class CartModel {
         return user;
     }
 
-    public String getProduct() {
+    public Product getProduct(){
         return product;
     }
-
     public String getStatus() {
         return status;
     }

@@ -57,11 +57,15 @@
                 android:layout_alignParentEnd="true">
                 <Button
                     android:id="@+id/btnCheckOut"
+                    android:background="#E7C86A"
                     android:layout_width="wrap_content"
                     android:layout_height="38dp"
+                    android:textColor="#fff"
                     android:text="Check Out"/>
                 <Button
                     android:id="@+id/btnDelete"
+                    android:background="#C20202"
+                    android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="38dp"
                     android:text="Delete"/>

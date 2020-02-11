@@ -1,4 +1,4 @@
-package com.automotive.automotiveplatform.ui.notifications;
+package com.automotive.automotiveplatform.ui.cart;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -10,7 +10,7 @@ public class NotificationsViewModel extends ViewModel {
 
     public NotificationsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is cart fragment");
     }
 
     public LiveData<String> getText() {

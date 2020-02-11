@@ -8,9 +8,9 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.automotive.automotiveplatform.ui.account.AccountFragment;
-import com.automotive.automotiveplatform.ui.dashboard.DashboardFragment;
+import com.automotive.automotiveplatform.ui.map.DashboardFragment;
 import com.automotive.automotiveplatform.ui.home.HomeFragment;
-import com.automotive.automotiveplatform.ui.notifications.NotificationsFragment;
+import com.automotive.automotiveplatform.ui.cart.NotificationsFragment;
 import com.automotive.automotiveplatform.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -29,9 +29,10 @@ public class DashboardActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
+
+
         sharedPreferences = getSharedPreferences("tokens", MODE_PRIVATE);
-        checktoken = sharedPreferences.getString("token", null);
-        Toast.makeText(this, checktoken, Toast.LENGTH_SHORT).show();
+        checktoken = sharedPreferences.getString("token", "");
 
         loadFragment(new HomeFragment());
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -49,11 +50,18 @@ public class DashboardActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         break;
                     case R.id.navigation_notifications:
+                        if(checktoken==""){
+                                fragment =new AccountFragment();
+                                loadFragment(fragment);}
+
+                    else{
                         fragment = new NotificationsFragment();
-                        loadFragment(fragment);
+                                loadFragment(fragment);}
+
                         break;
+
                     case R.id.navigation_Acc:
-                        if (checktoken==null) {
+                        if (checktoken=="") {
                             fragment = new AccountFragment();
                             loadFragment(fragment);
                         } else {
