@@ -1,5 +1,6 @@
 package com.automotive.automotiveplatform;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -34,7 +35,14 @@ public class DashboardActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("tokens", MODE_PRIVATE);
         checktoken = sharedPreferences.getString("token", "");
 
-        loadFragment(new HomeFragment());
+        Intent intent = getIntent();
+        String status = "open_map";
+        if(status.equals(intent.getStringExtra("status"))){
+            loadFragment(new NotificationsFragment());
+        } else {
+            loadFragment(new HomeFragment());
+        }
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -17,6 +17,7 @@ import android.widget.Toolbar;
 
 import com.automotive.automotiveplatform.DashboardActivity;
 import com.automotive.automotiveplatform.R;
+import com.automotive.automotiveplatform.SensorActivity;
 import com.automotive.automotiveplatform.ui.profileupdate.ProfileUpdateFragment;
 
 import java.io.IOException;
@@ -38,7 +39,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class ProfileFragment extends Fragment implements View.OnClickListener {
     String id;
     private TextView name, email, phone, address;
-    private Button btnEdit, btnLogout;
+    private Button btnEdit,btnShowSensors, btnLogout;
    private Toolbar toolbarHeading;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
@@ -65,8 +66,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         address = view.findViewById(R.id.Address);
         btnEdit = view.findViewById(R.id.btnEdit);
         btnLogout = view.findViewById(R.id.btnLogout);
+        btnShowSensors = view.findViewById(R.id.btnShowSensor);
         btnEdit.setOnClickListener(this);
         btnLogout.setOnClickListener(this);
+        btnShowSensors.setOnClickListener(this);
 
         loadProfile();
 
@@ -102,7 +105,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.btnEdit:
                 ProfileUpdateFragment fragment = new ProfileUpdateFragment(id,ProfileFragment.this);
                 getFragmentManager().beginTransaction().replace(R.id.frame_container, fragment).commit();
+                break;
 
+            case R.id.btnShowSensor:
+                Intent intent = new Intent(getActivity(), SensorActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.btnLogout:

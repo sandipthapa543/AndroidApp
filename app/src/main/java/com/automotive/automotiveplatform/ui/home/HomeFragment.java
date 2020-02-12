@@ -6,24 +6,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.automotive.automotiveplatform.R;
-import com.smarteist.autoimageslider.SliderView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import adapter.HomeViewAdapter;
 import api.ApiClass;
 import api.ProductAPI;
-import api.UserApi;
 import model.Brand;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -39,10 +33,11 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView=root.findViewById(R.id.RecyclerView);
 
+        TextView toolbarHeading = root.findViewById(R.id.toolbarHeading);
+        toolbarHeading.setText("Discover All Brands");
+
         fillUpRecyclerView();
-
         return root;
-
     }
 
     private void fillUpRecyclerView(){

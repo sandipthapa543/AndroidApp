@@ -46,30 +46,39 @@ public class ExampleInstrumentedTest {
     }
 
 
-
     @Before
-    public void fragment(){
+    public void fragment() {
         testRule.getActivity().getSupportFragmentManager().beginTransaction();
 
 
     }
 
     @Test
-    public void home(){
+    public void home() {
         onView(withId(R.id.navigation_home))
                 .perform(swipeLeft());
         onView(withId(R.id.navigation_Acc))
-        .perform(click());
-    }
-
-    @Test
-    public void profile(){
-        onView(withId(R.id.navigation_dashboard))
+                .perform(click());
+        onView(withId(R.id.btnSignIn))
+                .perform(click());
+        onView(withId(R.id.login_emailid))
+                .perform(typeText("ask@gmail.com"));
+        onView(withId(R.id.login_password))
+                .perform(typeText("admin1234"), closeSoftKeyboard());
+        onView(withId(R.id.btnLogin))
                 .perform(click());
     }
 
     @Test
-    public void editProfile(){
+    public void profile() {
+        onView(withId(R.id.navigation_notifications))
+                .perform(click());
+        onView(withId(R.id.btnCheckOut))
+                .perform(click());
+    }
+
+    @Test
+    public void editProfile() {
         onView(withId(R.id.navigation_Acc))
                 .perform(click());
         onView(withId(R.id.btnEdit))
@@ -79,32 +88,20 @@ public class ExampleInstrumentedTest {
         onView(withId(R.id.lastName))
                 .perform(typeText("thapa"));
         onView(withId(R.id.Phone))
-                .perform(typeText("9814103679"),closeSoftKeyboard());
+                .perform(typeText("9814103679"), closeSoftKeyboard());
         onView(withId(R.id.Address))
-                .perform(typeText("pokhara"),closeSoftKeyboard());
+                .perform(typeText("pokhara"), closeSoftKeyboard());
         onView(withId(R.id.btnUpdate))
                 .perform(click());
     }
 
-//    @Test
-//    public void signUp(){
-//        onView(withId(R.id.firstName))
-//                .perform(click
-//    }
+    @Test
+    public void Logout() {
+        onView(withId(R.id.navigation_Acc))
+                .perform(click());
+        onView(withId(R.id.btnLogout))
+                .perform(click());
 
-//        @Test
-//        public void checkNos()
-//        {
-//            onView(withId(R.id.login_emailid))
-//                    .perform(typeText("ask@gmail.com"),closeSoftKeyboard());
-//            onView(withId(R.id.login_password))
-//                    .perform(typeText("admin1234"),closeSoftKeyboard());
-//            onView(withId(R.id.btnLogin))
-//                    .perform(click());
-//
-//            // This is another activity, no need to tell Espresso
-//
-//
-//        }
     }
+}
 
