@@ -2,23 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.automotive.automotiveplatform">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/login">
-<<<<<<< HEAD
-=======
-        <activity android:name=".SplashActivity"></activity>
->>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
+        android:theme="@style/login"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".SensorActivity"></activity>
+        <activity android:name=".ProductActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_dashboard" />
-        <activity android:name=".DashboardActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

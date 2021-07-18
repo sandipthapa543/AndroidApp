@@ -12,27 +12,25 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/accbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape">
+        android:layout_height="80dp"
+        android:background="#add8e6">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape"/>
+            android:background="@drawable/plogo2"/>
 
         <TextView
+            android:id="@+id/toolbarHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:textColor="#000"
             android:textSize="20dp"
-            android:text="Hello, Welcome to Automotive solution!"/>
+            android:textStyle="bold"
+            android:text="Welcome to Automobile Solution"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:background="#FF5722"/>
+
 
     </androidx.appcompat.widget.Toolbar>
 

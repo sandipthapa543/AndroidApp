@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.profileupdate.ProfileUpdateFragment">
+    <include  layout="@layout/account_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/firstName"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="First Name"
+        android:drawableLeft="@drawable/last"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/lastName"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Last Name"
+        android:drawableLeft="@drawable/name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/Phone"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:drawableLeft="@drawable/phone"
+
+        android:textSize="16sp" />
+    <EditText
+        android:id="@+id/Address"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Address"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/address"/>
+
+
+    <Button
+
+        android:id="@+id/btnUpdate"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/buttonstyle"
+        android:text="Save Changes"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

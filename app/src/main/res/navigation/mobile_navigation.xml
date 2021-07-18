@@ -13,13 +13,24 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.automotive.automotiveplatform.ui.dashboard.DashboardFragment"
+        android:name="com.automotive.automotiveplatform.ui.map.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.automotive.automotiveplatform.ui.notifications.NotificationsFragment"
+        android:name="com.automotive.automotiveplatform.ui.cart.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_Acc"
+        android:name="com.automotive.automotiveplatform.ui.account.AccountFragment"
+        android:label="@string/title_accounts"
+        tools:layout="@layout/fragment_account"
+    />
+
+
+
+
 </navigation>

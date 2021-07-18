@@ -2,27 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg"
     >
 
     <LinearLayout
         android:id="@+id/login_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:orientation="vertical" >
 
-<<<<<<< HEAD
+
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
+            android:layout_height="48dp"
             android:text="Sign Up"
-            android:textColor="@color/white"
-            android:textSize="26dp"
-            android:textStyle="bold" />
-=======
->>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
+            android:gravity="center"
+            android:textColor="#000"
+            android:drawableLeft="@drawable/plogo2"
+            android:textSize="20dp"
+         />
+
         <EditText
             android:id="@+id/firstName"
             android:singleLine="true"
@@ -33,15 +32,15 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="First Name"
-            android:drawableLeft="@drawable/username"
+            android:drawableLeft="@drawable/last"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
         <EditText
-            android:id="@+id/last_Name"
-            android:drawableLeft="@drawable/lastname"
+            android:id="@+id/lastName"
+            android:drawableLeft="@drawable/name"
             android:singleLine="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -59,13 +58,13 @@
 
 
         <EditText
-            android:id="@+id/login_emailid"
+            android:id="@+id/emailid"
             android:singleLine="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/username"
+            android:drawableLeft="@drawable/email"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Email"
@@ -81,7 +80,7 @@
             android:background="@color/white_greyish" />
 
         <EditText
-            android:id="@+id/login_password"
+            android:id="@+id/password"
             android:singleLine="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -111,8 +110,7 @@
             android:padding="10dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:drawableLeft="@drawable/phones"
-
+            android:drawableLeft="@drawable/phone"
             android:textSize="16sp" />
         <EditText
             android:id="@+id/Address"
@@ -129,33 +127,21 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp"
-            android:drawableLeft="@drawable/location"/>
+            android:drawableLeft="@drawable/address"/>
 
 
         <Button
-<<<<<<< HEAD
-            android:id="@+id/btnLogin"
-=======
+
             android:id="@+id/btnSignup"
->>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/roundedbutton"
             android:text="SignUp"
             android:textColor="#FFFFFF" />
-<<<<<<< HEAD
-=======
 
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/roundedbutton"
-            android:text="SignIn"
-            android:textColor="#FFFFFF" />
->>>>>>> d3df10947f82fd2b5d0da75ee28d9cf257a89b48
+
 
     </LinearLayout>
 </RelativeLayout>
